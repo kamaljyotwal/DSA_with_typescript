@@ -29,3 +29,4 @@ function mergeSortedArrays(arr1, arr2) {
 const arr1 = [1, 3, 5, 7, 9, 11];
 const arr2 = [2, 4, 6, 8, 10];
 console.log(mergeSortedArrays(arr1, arr2));
+//# sourceMappingURL=multiArraySort.js.map

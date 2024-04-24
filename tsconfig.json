@@ -8,14 +8,14 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "declaration": false,
-    "sourceMap": false,
+    "declaration": true,
+    "sourceMap": true,
     "outDir": "./compiled",
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*", "src/types/*"]
     }
   },
-  "include": ["DSA_and_leetcode/**/*.ts"],
+  "include": ["DSA_leetcode/**/*.ts"],
   "exclude": ["node_modules"]
 }

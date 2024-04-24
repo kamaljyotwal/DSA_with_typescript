@@ -21,3 +21,4 @@ function findElent(arr, func) {
 //  console.log(a)
 // }
 console.log(findElent([1, 17, 16, 2, 3, 4], (num) => num % 2 === 0));
+//# sourceMappingURL=findElement.js.map

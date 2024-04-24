@@ -20,3 +20,4 @@ console.log(largestOfFour([
     [32, 35, 37, 39],
     [1000, 1001, 857, 1],
 ]));
+//# sourceMappingURL=largestOfFour.js.map
