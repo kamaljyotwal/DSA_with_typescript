@@ -60,7 +60,7 @@
 // console.log(a);
 
 // function destroyer(arr0: number[], ...arr: number[]) {
-//   console.log(arr)
+// //   console.log(arr)
 //   return arr0.filter((i) => !arr.includes(i));
 // }
 // console.log(destroyer([1, 2, 3, 4, 5], 2, 3));
@@ -68,18 +68,17 @@
 // interface MathFunction {
 //   (x: number, y: number): number;
 // }
-
 // let add: MathFunction = function (x: number, y: number): number {
 //   return x + y;
 // };
 // console.log(add(2, 5));
+
 // class Example {
 //   private secret: string;
 
 //   constructor(secret: string) {
 //     this.secret = secret;
 //   }
-
 //   getSecret(): string {
 //     return this.secret;
 //   }
@@ -87,7 +86,7 @@
 
 // const example = new Example("classified");
 // console.log(example.getSecret());
-// console.log(example.secret) // error
+// // console.log(example.secret) // error
 // -----------------------------------------------------
 
 // abstract class PaymentProcessor {
@@ -132,13 +131,14 @@
 //   last: "j",
 //   age: 30,
 // } as const;
-// // console.log((data.age = 30)); //cant reassign
+// data.age = 20; //cant reassign
 // console.log(data);
 // -----------------------------------------------
-// function countAndSortCharacters(str: string) {
-//   const counts: any = {};
 
-//   // Count each character
+// function countAndSortCharacters(str: string) {
+//   const counts: { [key: string]: number } = {};
+
+//   // Count each character and put in result object
 //   for (const char of str) {
 //     if (counts[char]) {
 //       counts[char]++;
@@ -146,11 +146,8 @@
 //       counts[char] = 1;
 //     }
 //   }
-//   // console.log(counts);
-
 //   // // Convert the counts object to an array of [char, count] pairs
 //   const sorted = Object.entries(counts);
-//   console.log(sorted);
 
 //   // // Sort the array by count and then by character if counts are equal
 //   sorted.sort((a: any, b: any) => {
@@ -160,9 +157,31 @@
 //     return b[1] - a[1]; // Sort by count in descending order
 //   });
 //   // Print or return the sorted array
-//   // console.log(sorted);
-//   // return sorted;
+//   console.log(sorted);
+//   return sorted;
 // }
-
-// // Example usage
 // countAndSortCharacters("hello world");
+
+// let a = new Promise((resolve, reject) => {
+//   let val = false;
+//   if (val) {
+//     resolve("resolved");
+//   } else {
+//     reject("rejected");
+//   }
+// });
+// a.then((res) => console.log(res)).catch((rej) => console.log(rej));
+// ====================================================
+Promise.resolve().then(() => console.log(1));
+
+setTimeout(() => {
+  console.log(2);
+}, 10);
+
+queueMicrotask(() => {
+  console.log(3);
+  queueMicrotask(() => console.log(4));
+});
+console.log(5);
+// =====================================================
+ 

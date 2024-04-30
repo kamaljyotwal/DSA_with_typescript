@@ -6,7 +6,10 @@ function mostRepeating(str) {
         const count = (charCountMap.get(char) || 0) + 1;
         charCountMap.set(char, count);
     }
-    return [...charCountMap][0][0];
+    // console.log(charCountMap);
+    const entries = [...charCountMap.entries()].sort((a, b) => b[1] - a[1]);
+    // console.log(entries)
+    return [...entries][1][0];
 }
 // --------------------------------------------
 // Another Approach
@@ -30,5 +33,5 @@ function mostRepeating(str) {
 //   return Object.keys(result)[1];
 // }
 // usage
-console.log(mostRepeating("3553853335"));
+console.log(mostRepeating("355385333888885"));
 //# sourceMappingURL=mostRepeatingString.js.map

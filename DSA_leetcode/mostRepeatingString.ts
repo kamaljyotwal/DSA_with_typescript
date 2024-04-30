@@ -1,12 +1,15 @@
 // Function to find most repeating character in a string.
 function mostRepeating(str: string) {
   const charCountMap = new Map<string, number>();
-
   for (const char of str) {
     const count = (charCountMap.get(char) || 0) + 1;
     charCountMap.set(char, count);
   }
-  return [...charCountMap][0][0];
+  // console.log(charCountMap);
+  const entries = [...charCountMap.entries()].sort((a, b) => b[1] - a[1]);
+  // console.log(entries)
+
+  return [...entries][1][0];
 }
 // --------------------------------------------
 // Another Approach
@@ -15,7 +18,6 @@ function mostRepeating(str: string) {
 //   for (const char of str) {
 //     charCount[char] = (charCount[char] || 0) + 1;
 //   }
-
 //   const sortedCharCounts = Object.entries(charCount).sort((a, b) => b[1] - a[1]);
 //   return sortedCharCounts[1];
 // }
@@ -33,4 +35,4 @@ function mostRepeating(str: string) {
 // }
 
 // usage
-console.log(mostRepeating("3553853335"));
+console.log(mostRepeating("355385333888885"));

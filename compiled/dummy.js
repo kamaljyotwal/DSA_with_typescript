@@ -51,7 +51,7 @@
 // }, {});
 // console.log(a);
 // function destroyer(arr0: number[], ...arr: number[]) {
-//   console.log(arr)
+// //   console.log(arr)
 //   return arr0.filter((i) => !arr.includes(i));
 // }
 // console.log(destroyer([1, 2, 3, 4, 5], 2, 3));
@@ -73,7 +73,7 @@
 // }
 // const example = new Example("classified");
 // console.log(example.getSecret());
-// console.log(example.secret) // error
+// // console.log(example.secret) // error
 // -----------------------------------------------------
 // abstract class PaymentProcessor {
 //   protected abstract processPayment(amount: number): void;
@@ -109,12 +109,12 @@
 //   last: "j",
 //   age: 30,
 // } as const;
-// // console.log((data.age = 30)); //cant reassign
+// data.age = 20; //cant reassign
 // console.log(data);
 // -----------------------------------------------
 // function countAndSortCharacters(str: string) {
-//   const counts: any = {};
-//   // Count each character
+//   const counts: { [key: string]: number } = {};
+//   // Count each character and put in result object
 //   for (const char of str) {
 //     if (counts[char]) {
 //       counts[char]++;
@@ -122,10 +122,8 @@
 //       counts[char] = 1;
 //     }
 //   }
-//   // console.log(counts);
 //   // // Convert the counts object to an array of [char, count] pairs
 //   const sorted = Object.entries(counts);
-//   console.log(sorted);
 //   // // Sort the array by count and then by character if counts are equal
 //   sorted.sort((a: any, b: any) => {
 //     if (a[1] === b[1]) {
@@ -134,9 +132,28 @@
 //     return b[1] - a[1]; // Sort by count in descending order
 //   });
 //   // Print or return the sorted array
-//   // console.log(sorted);
-//   // return sorted;
+//   console.log(sorted);
+//   return sorted;
 // }
-// // Example usage
 // countAndSortCharacters("hello world");
+// let a = new Promise((resolve, reject) => {
+//   let val = false;
+//   if (val) {
+//     resolve("resolved");
+//   } else {
+//     reject("rejected");
+//   }
+// });
+// a.then((res) => console.log(res)).catch((rej) => console.log(rej));
+// ====================================================
+Promise.resolve().then(() => console.log(1));
+setTimeout(() => {
+    console.log(2);
+}, 10);
+queueMicrotask(() => {
+    console.log(3);
+    queueMicrotask(() => console.log(4));
+});
+console.log(5);
+// =====================================================
 //# sourceMappingURL=dummy.js.map
