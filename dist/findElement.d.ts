@@ -1,1 +1,1 @@
-declare function findElent(arr: number[], func: (num: number) => boolean): number | undefined;
+declare function findElement(arr: number[], func: (num: number) => boolean): number | undefined;

@@ -1,19 +1,19 @@
 function largestOfFour(args: number[][]): number[] {
-  //Approach 1
+  
+  //Best Approach
+  let b = args.reduce((acc, i) => [...acc, Math.max(...i)], []);
+  return b;
+
+  //Approach 2
+  // let a = args.map((arr) => Math.max(...arr));
+  // console.log(a);
+
+  //Approach 3
   //   let res: number[] = [];
   //   for (let i = 0; i < args.length; i++) {
   //     res = [...res, args[i].sort((a, b) => b - a)[0]];
   //   }
   //   return res;
-
-  //Approach 2
-  //   let a = args.map((arr) => Math.max(...arr));
-  //   console.log(a);
-
-  //Approach 3
-  let b = args.reduce((acc, i) => [...acc, Math.max(...i)], []);
-  //   console.log(b);
-  return b;
 }
 
 console.log(

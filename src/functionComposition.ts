@@ -3,10 +3,10 @@
 // Output: 1000
 function compose(f: Function[], g: number) {
   let input = g;
-  for (let i = 0; i < f.length; i++) {
+  // reversing the order of loop exececution as result of last element is going in result of second last and so on f(g(h(x)))
+  for (let i = f.length - 1; i >= 0; i--) {
     input = f[i](input);
   }
-  console.log(input);
   return input;
 }
 
