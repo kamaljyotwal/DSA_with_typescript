@@ -1,6 +1,8 @@
 "use strict";
 function truncateString(str, num) {
-    if (str.length <= num)
+    if (!str || num < 0)
+        throw new Error("Invalid input");
+    if (num > str.length)
         return str;
     return str.slice(0, num) + "...";
 }

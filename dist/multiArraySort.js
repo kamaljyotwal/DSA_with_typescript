@@ -1,7 +1,7 @@
 "use strict";
 function mergeSortedArrays(arr1, arr2) {
-    // shorter smaller approach
     return [...arr1, ...arr2].sort((a, b) => a - b);
+    // Another approach----------------------------------------------------
     // const merged = [];
     // let i = 0;
     // let j = 0;
