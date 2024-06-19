@@ -6,39 +6,44 @@
 //     .join(" ");
 // }
 // console.log(titleCase("i'm a little tea pot"));
+// -------------------------------------------------------------------------------
 // function frankenSplice(arr1: number[], arr2: number[], n: number) {
 //   let arr1Copy = [...arr1];
 //   let arr2Copy = [...arr2];
-//   arr1Copy.splice(n, 0, ...arr2Copy);
+//   let a = arr1Copy.splice(n, 0, ...arr2Copy);
+//   console.log(a,"Aa")
 //   return arr1Copy;
 // }
 // console.log(frankenSplice([1, 2, 3], [4, 5, 6], 2));
+// -----------------------------------------------------------------------------
 // function getIndexToIns(arr: number[], num: number) {
-//   arr.push(num);
-//   arr.sort((a, b) => a - b);
-//   return arr.indexOf(num);
+//   let a = [...arr, num].sort((a, b) => a - b);
+//   return a.indexOf(num);
 // }
 // console.log(getIndexToIns([40, 60], 20));
-// function chunkArrayInGroups(arr: number[], size: number) {
-//   let result: number[][] = [];
-//   for (let i = 0; i < arr.length; i += size) {
-//     result.push(arr.slice(i, i + size));
-//   }
-//   return result;
-// }
-// console.log(chunkArrayInGroups([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2));
+// ---------------------------------------------------------------------------
+function chunkArrayInGroups(arr, size) {
+    let result = [];
+    for (let i = 0; i < arr.length; i += size) {
+        result.push(arr.slice(i, i + size));
+    }
+    return result;
+}
+console.log(chunkArrayInGroups([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2));
+// -------------------------------------------------------------------------------
 // let animal = {
 //   eats: true,
 // };
 // let rabbit = {
 //   jumps: true,
 // };
-// // rabbit.__proto__ = animal; // gives error in ts, because its non-standard and not part of EcmaScript
+// rabbit.__proto__ = animal; // gives error in ts, because its non-standard and not part of EcmaScript
 // Object.setPrototypeOf(rabbit, animal);
 // console.log(animal);
 // console.log(rabbit);
 // console.log(animal.isPrototypeOf(rabbit));
 // console.log(rabbit.isPrototypeOf(animal));
+// -----------------------------------------------------------------------------
 // const users = [
 //   { name: "jon", age: 35 },
 //   { name: "amy", age: 20 },
@@ -50,18 +55,20 @@
 //   return acc;
 // }, {});
 // console.log(a);
+// -----------------------------------------------------------------------------
 // function destroyer(arr0: number[], ...arr: number[]) {
-// //   console.log(arr)
 //   return arr0.filter((i) => !arr.includes(i));
 // }
 // console.log(destroyer([1, 2, 3, 4, 5], 2, 3));
-// interface MathFunction {
+// -------------------------------------------------------------------------------
+// type MathFunction = {
 //   (x: number, y: number): number;
-// }
+// };
 // let add: MathFunction = function (x: number, y: number): number {
 //   return x + y;
 // };
 // console.log(add(2, 5));
+// -----------------------------------------------------------------------------
 // class Example {
 //   private secret: string;
 //   constructor(secret: string) {
@@ -73,7 +80,7 @@
 // }
 // const example = new Example("classified");
 // console.log(example.getSecret());
-// // console.log(example.secret) // error
+// console.log(example.secret)
 // -----------------------------------------------------
 // abstract class PaymentProcessor {
 //   protected abstract processPayment(amount: number): void;
@@ -122,8 +129,10 @@
 //       counts[char] = 1;
 //     }
 //   }
+//   // console.log(counts, 'c');
 //   // // Convert the counts object to an array of [char, count] pairs
 //   const sorted = Object.entries(counts);
+// // console.log(sorted, 'so')
 //   // // Sort the array by count and then by character if counts are equal
 //   sorted.sort((a: any, b: any) => {
 //     if (a[1] === b[1]) {
@@ -136,24 +145,26 @@
 //   return sorted;
 // }
 // countAndSortCharacters("hello world");
-// let a = new Promise((resolve, reject) => {
-//   let val = false;
-//   if (val) {
-//     resolve("resolved");
-//   } else {
-//     reject("rejected");
-//   }
-// });
-// a.then((res) => console.log(res)).catch((rej) => console.log(rej));
-// ====================================================
-Promise.resolve().then(() => console.log(1));
-setTimeout(() => {
-    console.log(2);
-}, 10);
-queueMicrotask(() => {
-    console.log(3);
-    queueMicrotask(() => console.log(4));
+// ------------------------------------------------------------------
+let a = new Promise((resolve, reject) => {
+    let val = false;
+    if (val) {
+        resolve("resolved");
+    }
+    else {
+        reject("rejected");
+    }
 });
-console.log(5);
+a.then((res) => console.log(res)).catch((rej) => console.log(rej));
+// ====================================================
+// setTimeout(() => {
+//   console.log(2);
+// }, 10);
+// queueMicrotask(() => {
+//   console.log(3);
+//   queueMicrotask(() => console.log(4));
+// });
+// Promise.resolve().then(() => console.log(1));
+// console.log(5);
 // =====================================================
 //# sourceMappingURL=dummy.js.map

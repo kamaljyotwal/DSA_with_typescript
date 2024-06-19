@@ -1,5 +1,7 @@
 "use strict";
 function mergeSortedArrays(arr1, arr2) {
+    // shorter smaller approach
+    return [...arr1, ...arr2].sort((a, b) => a - b);
     // const merged = [];
     // let i = 0;
     // let j = 0;
@@ -24,8 +26,6 @@ function mergeSortedArrays(arr1, arr2) {
     // }
     // // console.log(j, "jLast");
     // return merged;
-    // shorter smaller approach
-    return [...arr1, ...arr2].sort((a, b) => a - b);
 }
 const arr1 = [1, 3, 5, 7, 9, 11];
 const arr2 = [2, 4, 6, 8, 10];
